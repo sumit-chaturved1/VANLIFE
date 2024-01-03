@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { 
   Route,
-  createBrowserRouter, 
+  createHashRouter, 
   createRoutesFromElements, 
   RouterProvider
 } from "react-router-dom"
@@ -24,8 +24,8 @@ import HostLayout from "./components/HostLayout"
 import "./server"
 import NotFound from './pages/NotFound';
 
-const router = createBrowserRouter(createRoutesFromElements(
-  <Route path="/" element={<Layout />}>
+const router = createHashRouter(createRoutesFromElements(
+  <Route path="/*" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="vans" element={<Vans />} />
